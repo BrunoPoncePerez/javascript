@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label>Tareas:</label> <input id="txtexto" type="text">
+    <button id="btnAgregar">Agregar</button>
+
+    <div id="listado">
+
+    </div>
+
+    <script src="bruno.js"></script>
+
+
+<script>
+
+/* el tema es si queremos guardar muchos nombre en una variable */
+//var nombre = "hshshhs";
+
+//var nombres = ["lucas","jose","andy","bruno"];
+//alert(nombres);
+
+/* ¿como hacemos para acceder a determinado valor que esta en ese arreglo? 
+alert(nombres[3]);  dentro del corchete colocamos el valor del indice
+al que queremos llamar, si colocamos un valor que esta fuera de estos parametros
+nos dara undefined */
+
+/* ¿que sucede si tenemos un arreglo vacio que queremos ir llenando e apoco?
+ */
+
+//var nombres = []; /* con esto creamos un arreglo vacio */
+
+//nombres[0] = "Rumpelstiltskin"; /* con esto agragamos un valor al arreglo */
+//nombres[1] = "Sr.R"; 
+//nombres[2] = "Virgil"; 
+//nombres[3] = "DR. Stark"; 
+//alert(nombres);
+
+/* aca le colocamos nosotros mismos los valores de los indices, otra manera
+más simple sin hacer eso es... */
+
+/* nombres.push("Rumpelstiltskin");
+nombres.push("Sr.R");
+nombres.push("Virgil");
+nombres.push("Dr.Stark"); */
+//alert(nombres); 
+
+/* si queremos ver todos los valores que estan cargados dentro de la 
+variable de nombres pero de a uno a la vez */
+
+/*for(var i = 0; i < nombres.length este .length hace 
+referencia a la cantidad de valores que tiene agregado la variable nombre
+ ; i++){
+ de esta forma iremos recorriendo todas las variables de nombres 
+var nombre = nombres[i];
+alert(nombre);
+} esto tambien es equivalente a ...
+*/
+
+//...Esto...
+
+/* for (var nombre of nombres) {
+    alert(nombre);
+} */
+ 
+
+</script>
+
+
+
+    
+</body>
+</html>

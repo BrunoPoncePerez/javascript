@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euler</title>
+</head>
+<body>
+
+    <pre>
+         Se requiere un algoritmo para obtener 
+         la edad promedio de un grupo de N alumnos...
+    </pre>
+    
+
+    <script>
+
+     let cantidad =prompt("Indique cuantos alumnos registrará...");//nos quitamos la n
+     let edad1; //registro de las edades
+     /* solo la declaramos ya que en base a nuestro ciclo 
+     estaremos pidiendo la edad de los alumnos */
+     let sumatoriade_Alumnos = 0;//acumulador de edades
+     let n; //ciclo
+            
+     for( n = 1; n <= cantidad; n++){
+         edad1 = prompt("Ingrese la Edad del Alumno" + n);
+
+         sumatoriade_Alumnos = sumatoriade_Alumnos + edad1;
+     }
+
+     alert(`El promedio de edad de las edades de  los ${cantidad} alumnos es: ${sumatoriade_Alumnos/cantidad}`);
+
+
+    </script>
+    
+</body>
+</html>

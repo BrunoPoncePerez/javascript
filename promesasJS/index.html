@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <b>Nombre del Post:</b> <span id="txtPost"></span><br>
+    <b>¿Está completo el Post?</b> <span id="txtCompleto"></span>
+
+
+    <script>
+
+        /* 1) acá sucede que esamos haciendo una promesa sin que nos demos cuenta.
+        Una promesa es un objeto que representa un valor que puede que este 
+        disponible <<ahora>>, en un <<futuro>> o que <<nunca>> lo esté. 
+           como no se sabe cuando va a estar disponible, todas las operaciones
+           dependientes de ese valor, tendran que posponerse en el tiempo.
+         */
+
+        /* tenemos un fetch, a ese fetch lo procesamos y nos devuelve un json
+        cargado ... */
+
+        /* creamos nuestra propia promesa */
+        function cargarJson() {
+                /* fetch("https://jsonplaceholder.typicode.com/todos/1")
+                  
+                .then(Response => Response.json())
+                .then(jsonCargado); */
+
+                let promesa = new Promise(resolver => {
+                    setTimeout(() => {
+                        let json = {
+                            "userId": 1,
+                            "id": 1,
+                            "title": "delectus aut autem",
+                            "completed": false
+                        }
+
+                        resolver(json);
+
+                    }, 5000);
+
+                });
+
+                promesa.then(json => {
+                    jsonCargado(json);
+                });
+
+        }
+        /* ... ahora, con esta carga lo que hacemos es llamar a un span y en ese
+        span le ponemos el titulo y en el otro si está cargado o no */
+        function jsonCargado(json) {
+            let spanPost = document.getElementById("txtPost");
+            spanPost.innerText = json.title;
+
+            let txtCompleto = document.getElementById("txtCompleto");
+
+
+
+            if (json.completed) {
+                txtCompleto.innerText = "Está completo";
+            } else {
+                txtCompleto.innerText = "Está incompleto";
+
+            }
+
+            console.log(json);
+
+        }
+
+        cargarJson();
+
+
+
+
+
+    </script>
+</body>
+
+</html>

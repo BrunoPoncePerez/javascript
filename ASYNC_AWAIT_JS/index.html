@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <b>Nombre del Post:</b> <span id="txtPost"></span><br>
+    <b>¿Está completo el Post?</b> <span id="txtCompleto"></span>
+
+
+    <script>
+
+      async function cargarUrl(url) {
+            let respuesta = await fetch(url);
+            return respuesta.json();
+        }
+
+        async function cargarJson() {
+
+            let json = await cargarUrl("https://jsonplaceholder.typicode.com/todos/1");
+
+
+            let spanPost = document.getElementById("txtPost");
+            spanPost.innerText = json.title;
+
+            let txtCompleto = document.getElementById("txtCompleto");
+
+
+
+            if (json.completed) {
+                txtCompleto.innerText = "Está completo";
+            } else {
+                txtCompleto.innerText = "Está incompleto";
+
+            }
+
+            console.log(json);
+
+        }
+
+        cargarJson();
+
+
+
+      /* hasta ahora vimos el fetch y promise, ahora estamos en async y awai
+      que simplifican mucho todo lo visto hasta ahora...
+      
+      Cuando usamos la palabra reservada async al declarar una función, 
+      suceden dos cosas: Podemos usar la palabra await dentro de esa 
+      función para acceder directamente a los valores que devolverían 
+      métodos que devuelven promesas. La propia función que estamos
+       declarando devuelve su valor de retorno como una promesa.*/
+
+        /* tenemos dos funciones cargarJson y jsonCargado, apenas inicia el
+        proyecto, se llama a la funcion cargarJson, lo cual lo unico que hace
+        es ejecutar una funcion propia de js que se llama fetch  = "traer", lo 
+        que hace este fetch es traer informacion de la url, esta
+        url nos trae un json. Despues llamamos a la funcion jsonCargado, la cual
+        procesará y mostrara toda la informacion.
+         */
+
+
+         /* al usar await tenemos que usar la palabra asyc, que va a convertir
+         la funcion en asincronica */
+         /* async function cargarJson() { */
+            /* fetch("https://jsonplaceholder.typicode.com/todos/1")
+            .then(Response => Response.json())
+            .then(jsonCargado);  */
+
+
+             /* con await hacemos que el sistema quede esperando a que esa
+             promesa se resuelva antes de continuar*/
+/*              let respuesta = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+ */            /* cuando llamamos al fetch nos procesa una promesa inmediata */
+            /* guardamos la informacion de esa promesa en una variable 
+            con async await */
+            /* let json = await respuesta.json();
+            jsonCargado(json); */
+
+        //}
+
+        /* function jsonCargado(json) {
+            let spanPost = document.getElementById("txtPost");
+            spanPost.innerText = json.title;
+
+            let txtCompleto = document.getElementById("txtCompleto");
+
+
+
+            if (json.completed) {
+                txtCompleto.innerText = "Está completo";
+            } else {
+                txtCompleto.innerText = "Está incompleto";
+
+            }
+
+            console.log(json);
+
+        }
+
+        cargarJson(); */
+
+ </script>
+</body>
+
+</html>

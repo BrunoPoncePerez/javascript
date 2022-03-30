@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euler</title>
+</head>
+<body>
+
+    <pre>
+        Si enumeramos todos los números naturales debajo 
+        de 10 que son múltiplos de 3 o 5, obtenemos 3, 5, 6 y 9.
+        La suma de estos múltiplos es 23. 
+        Encuentra la suma de todos los múltiplos de 3 o 5 
+        por debajo de 1000.
+    </pre>
+
+           <b>Resultado:</b><span id="resultado"></span>
+
+    <script>
+
+        let resultado = 0;
+
+        for(let i = 0; i < 1000; i++){
+            if(i % 3 == 0 || i % 5 == 0)
+            resultado += i;
+        }
+        
+        
+        document.getElementById("resultado").innerHTML = resultado;
+
+    </script>
+    
+</body>
+</html>

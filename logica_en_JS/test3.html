@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <pre>
+        ¿Qué numeros forman la secuencia que se imprime al invocar la
+        siguiente funcion recursiva con el numero 5 como unico argumento?
+    </pre>
+
+
+    <script>
+        function recursiva(n){
+            if(n <= 0 || n >=10){
+                return 0;
+            } else if( n % 2 == 0){
+                alert(n);
+            }
+            recursiva (n+1);
+        }
+        recursiva(5);
+    </script>
+    
+</body>
+</html>
